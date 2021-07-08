@@ -1,9 +1,150 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="En">
 <head>
-  <title> test </title>
-</head>
-<body>
- <h1> bshdfvbsdf</h1>
- </body>
- </html>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>FEG MOON</title>
+  <meta name="description" content="The world is too crowed, we want to go to a place far away...Like the moon" />
+  <meta property="og:description" content="The world is too crowed, we want to go to a place far away...Like the moon" />
+  <meta property="og:image" content="screenshot.png" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+  <script type="text/javascript" charset="utf-8">
+    function hasClassName(inElement, inClassName)
+    {
+        var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');
+        return regExp.test(inElement.className);
+    }
+
+    function addClassName(inElement, inClassName)
+    {
+        if (!hasClassName(inElement, inClassName))
+            inElement.className = [inElement.className, inClassName].join(' ');
+    }
+
+    function removeClassName(inElement, inClassName)
+    {
+        if (hasClassName(inElement, inClassName)) {
+            var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)', 'g');
+            var curClasses = inElement.className;
+            inElement.className = curClasses.replace(regExp, ' ');
+        }
+    }
+
+    function toggleClassName(inElement, inClassName)
+    {
+        if (hasClassName(inElement, inClassName))
+            removeClassName(inElement, inClassName);
+        else
+            addClassName(inElement, inClassName);
+    }
+
+    function toggleShape()
+    {
+      var shape = document.getElementById('shape');
+      if (hasClassName(shape, 'cube') || hasClassName(shape, 'autoLoad')) {
+		if (hasClassName(shape, 'cube')) {
+			removeClassName(shape, 'cube');
+		}
+		if (hasClassName(shape, 'autoLoad')) {
+			removeClassName(shape, 'autoLoad');
+		}
+        addClassName(shape, 'ring');
+      } else {
+        removeClassName(shape, 'ring');
+        addClassName(shape, 'cube');
+      }
       
+      var stage = document.getElementById('stage');
+      if (hasClassName(shape, 'ring'))
+        stage.style.webkitTransform = 'translateZ(-200px)';
+      else
+        stage.style.webkitTransform = '';
+    }
+	function BSCLINK()
+    {
+      location.href = 'https://bscscan.com/address/0x88d8025A22722a7d7550795038194CFcBAAd327E';
+    }
+	function PANCAKELINK()
+    {
+      location.href = 'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x88d8025A22722a7d7550795038194CFcBAAd327E';
+    }
+	function TWITTERLINK()
+    {
+      location.href = 'https://twitter.com/GORILLAFEGMOON';
+    }
+	function TELEGRAMLINK()
+    {
+      location.href = 'https://t.me/FEGMOON';
+    }
+	function REDDITLINK()
+    {
+      location.href = 'https://www.reddit.com';
+    }
+	
+	var count = 0;
+	var timer;
+	function timedCount() {
+		if(count >= 8) {
+			count = 0;
+			autoLoad();
+		} else {
+			count = count + 1;
+		}
+		timer = setTimeout(timedCount, 1000);
+	}
+	function autoLoad() {
+		var shapeTest = document.getElementById('shape');
+		if (hasClassName(shapeTest, 'cube')) {
+			removeClassName(shapeTest, 'cube');
+			addClassName(shapeTest, 'autoLoad');
+		} else {
+			toggleShape();
+		}
+	}
+  </script>
+  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="js/snow.js"></script>
+</head>
+<body onload="timedCount()">
+  <div class="panel">
+    <div class="author"><button onclick="BSCLINK()">BSC</button></div>
+	<div class="clear"></div>
+  </div>
+  <div class="panel">
+    <div class="author"><button onclick="PANCAKELINK()">PANCAKE</button></div>
+	<div class="clear"></div>
+  </div>
+  <div class="panel">
+    <div class="author"><button onclick="TWITTERLINK()">TWITTER</button></div>
+	<div class="clear"></div>
+  </div>
+  <div class="panel">
+    <div class="author"><button onclick="TELEGRAMLINK()">TELEGRAM</button></div>
+	<div class="clear"></div>
+  </div>
+  <div class="panel">
+    <div class="author"><button onclick="REDDITLINK()">REDDIT</button></div>
+	<div class="clear"></div>
+  </div>
+
+  <div id="container">
+    <div id="stage">
+      <div id="shape" class="cube backfaces">
+        <div class="plane one"></div>
+        <div class="plane two"></div>
+        <div class="plane three"></div>
+        <div class="plane four"></div>
+        <div class="plane five"></div>
+        <div class="plane six"></div>
+        <div class="plane seven"></div>
+        <div class="plane eight"></div>
+        <div class="plane nine"></div>
+        <div class="plane ten"></div>
+        <div class="plane eleven"></div>
+        <div class="plane twelve"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
