@@ -1,150 +1,146 @@
 <!DOCTYPE html>
-
-<html lang="En">
+<html>
+  
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>FEG MOON</title>
-  <meta name="description" content="The world is too crowed, we want to go to a place far away...Like the moon" />
-  <meta property="og:description" content="The world is too crowed, we want to go to a place far away...Like the moon" />
-  <meta property="og:image" content="screenshot.png" />
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-  <script type="text/javascript" charset="utf-8">
-    function hasClassName(inElement, inClassName)
-    {
-        var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');
-        return regExp.test(inElement.className);
-    }
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="revisit-after" content="1days">
+<meta name="google-site-verification" content="p5ox4sfUXCX8HegSV7LrJ23Nn9YToe5uIVOj4-Up2fI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="images/favicona361.png?ver=2.3" type="image/x-icon" />
+ 
+<title>FEG MOON - FEG FARM - FEG NFT - FEG GAME</title>
+ 
+<meta name="description" content="FEG MOON - FEG FARM - FEG NFT - FEG GAME.">
+<meta property="og:type" content="website">
+ 
+<meta property="og:title" content="FEG MOON - FEG FARM - FEG NFT - FEG GAME">
+<meta property="og:image" content="images/banner_sharea361.jpg?ver=2.3">   
+<meta property="og:image:secure_url" content="images/banner_sharea361.jpg?ver=2.3">   
+ 
+<meta property="og:description" content="FEG MOON - FEG FARM - FEG NFT - FEG GAME.">
+<meta property="og:url" content="index.html">
 
-    function addClassName(inElement, inClassName)
-    {
-        if (!hasClassName(inElement, inClassName))
-            inElement.className = [inElement.className, inClassName].join(' ');
-    }
 
-    function removeClassName(inElement, inClassName)
-    {
-        if (hasClassName(inElement, inClassName)) {
-            var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)', 'g');
-            var curClasses = inElement.className;
-            inElement.className = curClasses.replace(regExp, ' ');
-        }
-    }
 
-    function toggleClassName(inElement, inClassName)
-    {
-        if (hasClassName(inElement, inClassName))
-            removeClassName(inElement, inClassName);
-        else
-            addClassName(inElement, inClassName);
-    }
 
-    function toggleShape()
-    {
-      var shape = document.getElementById('shape');
-      if (hasClassName(shape, 'cube') || hasClassName(shape, 'autoLoad')) {
-		if (hasClassName(shape, 'cube')) {
-			removeClassName(shape, 'cube');
-		}
-		if (hasClassName(shape, 'autoLoad')) {
-			removeClassName(shape, 'autoLoad');
-		}
-        addClassName(shape, 'ring');
-      } else {
-        removeClassName(shape, 'ring');
-        addClassName(shape, 'cube');
-      }
-      
-      var stage = document.getElementById('stage');
-      if (hasClassName(shape, 'ring'))
-        stage.style.webkitTransform = 'translateZ(-200px)';
-      else
-        stage.style.webkitTransform = '';
-    }
-	function BSCLINK()
-    {
-      location.href = 'https://bscscan.com/address/0x88d8025A22722a7d7550795038194CFcBAAd327E';
-    }
-	function PANCAKELINK()
-    {
-      location.href = 'https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x88d8025A22722a7d7550795038194CFcBAAd327E';
-    }
-	function TWITTERLINK()
-    {
-      location.href = 'https://twitter.com/GORILLAFEGMOON';
-    }
-	function TELEGRAMLINK()
-    {
-      location.href = 'https://t.me/FEGMOON';
-    }
-	function REDDITLINK()
-    {
-      location.href = 'https://www.reddit.com';
-    }
-	
-	var count = 0;
-	var timer;
-	function timedCount() {
-		if(count >= 8) {
-			count = 0;
-			autoLoad();
-		} else {
-			count = count + 1;
-		}
-		timer = setTimeout(timedCount, 1000);
-	}
-	function autoLoad() {
-		var shapeTest = document.getElementById('shape');
-		if (hasClassName(shapeTest, 'cube')) {
-			removeClassName(shapeTest, 'cube');
-			addClassName(shapeTest, 'autoLoad');
-		} else {
-			toggleShape();
-		}
-	}
-  </script>
-  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="js/snow.js"></script>
-</head>
-<body onload="timedCount()">
-  <div class="panel">
-    <div class="author"><button onclick="BSCLINK()">BSC</button></div>
-	<div class="clear"></div>
-  </div>
-  <div class="panel">
-    <div class="author"><button onclick="PANCAKELINK()">PANCAKE</button></div>
-	<div class="clear"></div>
-  </div>
-  <div class="panel">
-    <div class="author"><button onclick="TWITTERLINK()">TWITTER</button></div>
-	<div class="clear"></div>
-  </div>
-  <div class="panel">
-    <div class="author"><button onclick="TELEGRAMLINK()">TELEGRAM</button></div>
-	<div class="clear"></div>
-  </div>
-  <div class="panel">
-    <div class="author"><button onclick="REDDITLINK()">REDDIT</button></div>
-	<div class="clear"></div>
-  </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129667637-12"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  <div id="container">
-    <div id="stage">
-      <div id="shape" class="cube backfaces">
-        <div class="plane one"></div>
-        <div class="plane two"></div>
-        <div class="plane three"></div>
-        <div class="plane four"></div>
-        <div class="plane five"></div>
-        <div class="plane six"></div>
-        <div class="plane seven"></div>
-        <div class="plane eight"></div>
-        <div class="plane nine"></div>
-        <div class="plane ten"></div>
-        <div class="plane eleven"></div>
-        <div class="plane twelve"></div>
-      </div>
+      gtag('config', 'UA-129667637-12');
+    </script>
+    <link href="timeline/css/stylea361.css?ver=2.3" rel="stylesheet">
+    <link href="timeline/css/jquery.flipster.mina361.css?ver=2.3" rel="stylesheet">
+  </head>
+  <body>
+      <div class="wrapper">
+        <header class="header">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                <!-- Fixed navbar-->
+                <nav class="navbar navbar-expand-md">
+                    <div id="menuMobile">
+                    <ul class="navbar-nav ml-auto mr-auto">
+                        <li class="nav-link"><a href="https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x88d8025A22722a7d7550795038194CFcBAAd327E">FEG MOON</a></li>
+						<li class="nav-link"><a href="https://poocoin.app/tokens/0x88d8025A22722a7d7550795038194CFcBAAd327E">CHART</a></li>
+						<li class="nav-link"><a href="https://www.reddit.com/user/FEGMOON/comments/mnn2rt/feg_moon_fair_launch/">REDDIT</a></li>
+						<li class="nav-link"><a href="https://boards.4channel.org/biz/thread/32749302">4CHANEL</a></li>
+						<li class="nav-link"><a href="https://t.me/FEGMOON">TELEGRAM</a></li>
+						<li class="nav-link"><a href="https://twitter.com/GORILLAFEGMOON">TWITTER</a></li>
+                    </ul>
+                    </div>
+                </nav>
+                </div>
+            </div>
+            </div>
+        </header><div class="flipster">
+    <ul>
+    <li data-flip-nav="August8">
+    <a href="#" class="Button Block"><img src="timeline/images/August.png?ver=2.3" alt="August"></a>
+    </li>
+    <li data-flip-nav="September9">
+    <a href="#" class="Button Block"><img src="timeline/images/September.png?ver=2.3" alt="September"></a>
+    </li>
+    <li data-flip-nav="Q42021">
+    <a href="#" class="Button Block"><img src="timeline/images/Q4.png?ver=2.3" alt="Q4"></a>
+    </li>
+    <li data-flip-nav="Q12022">
+    <a href="#" class="Button Block"><img src="timeline/images/2022.png?ver=2.3" alt="2022"></a>
+    </li>
+    <li data-flip-nav="April4">
+    <a href="#" class="Button Block"><img src="timeline/images/April.png?ver=2.3" alt="April"></a>	
+    </li>
+    <li data-flip-nav="May5">
+    <a href="#" class="Button Block"><img src="timeline/images/May.png?ver=2.3" alt="May"></a>
+    </li>
+    <li data-flip-nav="June6">
+    <a href="#" class="Button Block"><img src="timeline/images/June.png?ver=2.3" alt="June"></a>
+    </li>
+    <li data-flip-nav="July7">
+    <a href="#" class="Button Block"><img src="timeline/images/July.png?ver=2.3" alt="July"></a>
+    </li>
+    </ul>
     </div>
-  </div>
-</body>
+      <ul class="update-timeline">
+        <li id="April4"><a class="image-btn" href="javascript:;" idx="4"><img src="timeline/images/moon1.png?ver=2.3" alt=""><img src=timeline/images/moon001.png?ver=2.3 alt=""></a></li>
+        <li id="May5"><a class="image-btn" href="javascript:;" idx="5"><img src="timeline/images/moon2.png?ver=2.3" alt=""><img src=timeline/images/moon002.png?ver=2.3 alt=""></a></li>
+        <li id="June6"><a class="image-btn" href="javascript:;" idx="6"><img src="timeline/images/moon3.png?ver=2.3" alt=""><img src=timeline/images/moon003.png?ver=2.3 alt=""></a></li>
+        <li id="July7"><a class="image-btn" href="javascript:;" idx="7"><img src="timeline/images/moon4.png?ver=2.3" alt=""><img src=timeline/images/moon004.png?ver=2.3 alt=""></a></li>
+        <li id="August8"><a class="image-btn" href="javascript:;" idx="0"><img src="timeline/images/moon5.png?ver=2.3" alt=""><img src=timeline/images/moon005.png?ver=2.3 alt=""></a></li>
+        <li id="September9"><a class="image-btn" href="javascript:;" idx="1"><img src="timeline/images/moon6.png?ver=2.3" alt=""><img src=timeline/images/moon006.png?ver=2.3 alt=""></a></li>
+        <li id="Q32021"><a class="image-btn" href="javascript:;" idx="2"><img src="timeline/images/moon7.png?ver=2.3" alt=""><img src=timeline/images/moon007.png?ver=2.3 alt=""></a></li>
+        <li id="Q12022"><a class="image-btn" href="javascript:;" idx="3"><img src="timeline/images/moon8.png?ver=2.3" alt=""><img src=timeline/images/moon008.png?ver=2.3 alt=""></a></li>
+      </ul>
+    </div>
+    <script src="timeline/js/jquery-3.4.1.mina361.js?ver=2.3"></script>
+    <script src="timeline/js/jquery.flipster.mina361.js?ver=2.3"></script>
+    <script>
+      jQuery(document).ready(function() {
+        let start = 4;
+        var d = new Date();
+        var n = d.getMonth() + 1;
+        switch (n) {
+          case 12:
+            start = 6;
+            break;
+          case 1:
+            start = 7;
+            break;
+          case 2:
+            start = 1;
+            break;
+          case 3:
+            start = 2;
+            break;
+          case 4:
+            start = 3;
+            break;
+          default:
+            break;
+        }
+
+      	var carousel = $(".flipster").flipster({
+      	start: start,
+      	style: 'carousel',
+      	spacing: -0.2,
+      	//- nav: true,
+      	buttons: 'custom',
+      	buttonPrev: '',
+      	buttonNext: '',
+      	loop: true,
+      	});
+      
+      	$('.update-timeline li a').click(function() {
+      		var idx = jQuery(this).attr('idx');
+      		carousel.flipster('jump', parseInt(idx));
+      	})
+      })
+    </script>
+      </body>
 
 </html>
